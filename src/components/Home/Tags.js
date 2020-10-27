@@ -13,6 +13,15 @@ const Tags = props => {
               props.onClickTag(tag, page => agent.Articles.byTag(tag, page), agent.Articles.byTag(tag));
             };
 
+            // check if tag not contains any letter
+            var regExp = /[a-zA-Z]/g;
+
+            if ( !regExp.test(tag) ) {
+              return (
+                <a className="" key={tag}></a>
+              );
+            }
+
             return (
               <a
                 href=""

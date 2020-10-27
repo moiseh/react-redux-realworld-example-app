@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { SET_PAGE } from '../constants/actionTypes';
 
 const mapDispatchToProps = dispatch => ({
-  onSetPage: (page, payload) =>
+  onSetPage: (page, payload) => 
     dispatch({ type: SET_PAGE, page, payload })
 });
 
@@ -21,7 +21,8 @@ const ListPagination = props => {
   const setPage = page => {
     if(props.pager) {
       props.onSetPage(page, props.pager(page));
-    }else {
+    }
+    else {
       props.onSetPage(page, agent.Articles.all(page))
     }
   };
